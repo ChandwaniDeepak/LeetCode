@@ -16,11 +16,9 @@ public class RemoveKthNodeFromEndAlgo {
         len = len - k - 1;
         temp = head.next;
         if(len < 0){
-            System.out.println(len);
-            // dummy.next = null;
-            // head = temp;
-            head.next = null;
-            head = temp;
+            head.value = head.next.value;
+            head.next = head.next.next;
+            return ;
         }else{
             while(len > 0){
                 head = head.next;

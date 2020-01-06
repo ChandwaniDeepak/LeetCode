@@ -3,80 +3,127 @@ import java.util.*;
 public class MainClass {
 
 
-//    public static void main(String[] args) {
+    //    public static void main(String[] args) {
 //        System.out.println(solution("{([()])}"));
 //        System.out.println(solution("{ ( [ ) ] }"));
 //    }
-    public static  boolean solution(String s){
+    public static boolean solution(String s) {
         Stack<Character> stack = new Stack();
         System.out.println(s);
-        if(s.length()%2 != 0){
+        if (s.length() % 2 != 0) {
             return false;
         }
-        for(int i = 0; i<s.length(); i++){
-            if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{'){
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
                 stack.push((Character) s.charAt(i));
-            }else{
-                if(stack.empty() && i==0){
+            } else {
+                if (stack.empty() && i == 0) {
                     return false;
-                }else{
-                    if(stack.empty() && i < s.length()-1){
+                } else {
+                    if (stack.empty() && i < s.length() - 1) {
                         return false;
-                    }else{
-                        if(s.charAt(i) == ')' && stack.peek() == '(' ||
+                    } else {
+                        if (s.charAt(i) == ')' && stack.peek() == '(' ||
                                 s.charAt(i) == ']' && stack.peek() == '[' ||
-                                s.charAt(i) == '}' && stack.peek() == '{'){
+                                s.charAt(i) == '}' && stack.peek() == '{') {
                             stack.pop();
                         }
                     }
                 }
             }
         }
-        if(stack.empty()){
+        if (stack.empty()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 
 
     public static void main(String[] args) {
+        RiverSizesAlgo river = new RiverSizesAlgo();
+        int[][] matrix = new int[][]{
+                {1, 0, 0, 1, 1, 1},
+                //{1, 0, 1, 0},
+                //{0, 0, 1, 0},
+                //{1, 0, 1, 0}
+                };
+        river.riverSizes(matrix);
 
-
-        RemoveKthNodeFromEndAlgo.LinkedList list = new RemoveKthNodeFromEndAlgo.LinkedList(0);
-        RemoveKthNodeFromEndAlgo.LinkedList list1 = new RemoveKthNodeFromEndAlgo.LinkedList(1);
-        list.next = list1;
-        RemoveKthNodeFromEndAlgo.LinkedList list2 = new RemoveKthNodeFromEndAlgo.LinkedList(2);
-        list1.next = list2;
-        RemoveKthNodeFromEndAlgo.LinkedList list3 = new RemoveKthNodeFromEndAlgo.LinkedList(3);
-        list2.next = list3;
-        RemoveKthNodeFromEndAlgo.LinkedList list4 = new RemoveKthNodeFromEndAlgo.LinkedList(4);
-        list3.next = list4;
-        RemoveKthNodeFromEndAlgo.LinkedList list5 = new RemoveKthNodeFromEndAlgo.LinkedList(5);
-        list4.next = list5;
-        RemoveKthNodeFromEndAlgo.LinkedList list6 = new RemoveKthNodeFromEndAlgo.LinkedList(6);
-        list5.next = list6;
-        RemoveKthNodeFromEndAlgo.LinkedList list7 = new RemoveKthNodeFromEndAlgo.LinkedList(7);
-        list6.next = list7;
-        RemoveKthNodeFromEndAlgo.LinkedList list8 = new RemoveKthNodeFromEndAlgo.LinkedList(8);
-        list7.next = list8;
-        RemoveKthNodeFromEndAlgo.LinkedList list9 = new RemoveKthNodeFromEndAlgo.LinkedList(9);
-        list8.next = list9;
-
-        RemoveKthNodeFromEndAlgo remove = new RemoveKthNodeFromEndAlgo();
-        remove.removeKthNodeFromEnd(list, 10);
+//        AreBloodRelated abr = new AreBloodRelated();
+//        abr.prepareTree();
 
 
 
 
 
+//        ReverseLinkedListAlgo reverse = new ReverseLinkedListAlgo();
+//        ReverseLinkedListAlgo.LinkedList list = new ReverseLinkedListAlgo.LinkedList(0);
+//        ReverseLinkedListAlgo.LinkedList list1 = new ReverseLinkedListAlgo.LinkedList(1);
+//        list.next = list1;
+//        ReverseLinkedListAlgo.LinkedList list2 = new ReverseLinkedListAlgo.LinkedList(2);
+//        list1.next = list2;
+//        ReverseLinkedListAlgo.LinkedList list3 = new ReverseLinkedListAlgo.LinkedList(3);
+//        list2.next = list3;
+//        ReverseLinkedListAlgo.LinkedList list4 = new ReverseLinkedListAlgo.LinkedList(4);
+//        list3.next = list4;
+//        ReverseLinkedListAlgo.LinkedList list5 = new ReverseLinkedListAlgo.LinkedList(5);
+//        list4.next = list5;
+//        ReverseLinkedListAlgo.LinkedList list6 = new ReverseLinkedListAlgo.LinkedList(6);
+//        list5.next = list6;
+//        ReverseLinkedListAlgo.LinkedList list7 = new ReverseLinkedListAlgo.LinkedList(7);
+//        list6.next = list7;
+//
+//        ReverseLinkedListAlgo.LinkedList res = reverse.reverseLinkedList(list);
+//        System.out.println(res.value);
 
+//        SearchInSortedMatrixAlgo search = new SearchInSortedMatrixAlgo();
+//        int[][] matrix = {
+//                {1, 4, 7, 12, 15, 1000},
+//                {2, 5, 19, 31, 32, 1001},
+//                {3, 8, 24, 33, 35, 1002},
+//                {40, 41, 42, 44, 45, 1003},
+//                {99, 100, 103, 106, 128, 1004},
+//        };
+//        search.searchInSortedMatrix(matrix, -1);
+
+//        GroupAnagramsAlgo anagrams = new GroupAnagramsAlgo();
+//        List<String> words = new ArrayList<String>(Arrays.asList("abc", "dabd", "bca", "cab", "ddba"));
+//        anagrams.groupAnagrams(words);
+
+
+//
+//        RemoveKthNodeFromEndAlgo.LinkedList list = new RemoveKthNodeFromEndAlgo.LinkedList(0);
+//        RemoveKthNodeFromEndAlgo.LinkedList list1 = new RemoveKthNodeFromEndAlgo.LinkedList(1);
+//        list.next = list1;
+//        RemoveKthNodeFromEndAlgo.LinkedList list2 = new RemoveKthNodeFromEndAlgo.LinkedList(2);
+//        list1.next = list2;
+//        RemoveKthNodeFromEndAlgo.LinkedList list3 = new RemoveKthNodeFromEndAlgo.LinkedList(3);
+//        list2.next = list3;
+//        RemoveKthNodeFromEndAlgo.LinkedList list4 = new RemoveKthNodeFromEndAlgo.LinkedList(4);
+//        list3.next = list4;
+//        RemoveKthNodeFromEndAlgo.LinkedList list5 = new RemoveKthNodeFromEndAlgo.LinkedList(5);
+//        list4.next = list5;
+//        RemoveKthNodeFromEndAlgo.LinkedList list6 = new RemoveKthNodeFromEndAlgo.LinkedList(6);
+//        list5.next = list6;
+//        RemoveKthNodeFromEndAlgo.LinkedList list7 = new RemoveKthNodeFromEndAlgo.LinkedList(7);
+//        list6.next = list7;
+//        RemoveKthNodeFromEndAlgo.LinkedList list8 = new RemoveKthNodeFromEndAlgo.LinkedList(8);
+//        list7.next = list8;
+//        RemoveKthNodeFromEndAlgo.LinkedList list9 = new RemoveKthNodeFromEndAlgo.LinkedList(9);
+//        list8.next = list9;
+//
+//        RemoveKthNodeFromEndAlgo remove = new RemoveKthNodeFromEndAlgo();
+//        remove.removeKthNodeFromEnd(list, 10);
 
 
 //        SameBSTAlgo same = new SameBSTAlgo();
@@ -112,7 +159,6 @@ public class MainClass {
 //        lng.longestPalindromic("babad");
 
 
-
 //        TicTacToe348 ticTacToe = new TicTacToe348(3);
 //        ticTacToe.move(1,2,2);
 //        ticTacToe.move(0,2,1);
@@ -132,8 +178,6 @@ public class MainClass {
 //        node2.next = node3;
 //
 //        ListNode node6 = null;
-
-
 
 
 //        PrisonCellsAfterNDays957 prison = new PrisonCellsAfterNDays957();
@@ -173,7 +217,6 @@ public class MainClass {
 //        });
 
 
-
 //        CoinChange322 coin = new CoinChange322();
 //        int[] coins = new int[]{186,419,83,408};
 //        int amount = 6294;
@@ -182,7 +225,6 @@ public class MainClass {
 //        Permutations46 per = new Permutations46();
 //        int[] nums = new int[]{1, 2, 3};
 //        per.permute(nums);
-
 
 
 //        SpiralMatrix54 spiral = new SpiralMatrix54();
@@ -194,7 +236,6 @@ public class MainClass {
 //        }
 
 
-
 //        SearchInSortedArray33 search = new SearchInSortedArray33();
 //        int[] nums = new int[]{10, 0, 1, 2, 3, 4, 5, 6, 7, 8};
 //        int target = 8;
@@ -203,10 +244,6 @@ public class MainClass {
 
 //        GenerateParentheses22 gen = new GenerateParentheses22();
 //        System.out.println(gen.generateParenthesis(3));
-
-
-
-
 
 
 //        ReorderDataLogFiles937 reorder = new ReorderDataLogFiles937();
@@ -258,8 +295,6 @@ public class MainClass {
     }
 
 
-
-
 //    public static void main(String[] args) {
 //        int[][] s = {{1,89},{1,58},{1,77},{1,8},{1,98},{1,0},{1,54},{1,44},{1,31},{1,34},{1,43},{1,59},
 //                {1,88},{2,75},{2,14},{2,35},{2,37},
@@ -281,8 +316,6 @@ public class MainClass {
 //        System.out.println();
 //
 //    }
-
-
 
 
 //    public static void main(String[] args) {
