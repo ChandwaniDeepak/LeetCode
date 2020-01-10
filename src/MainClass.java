@@ -50,14 +50,19 @@ public class MainClass {
 
 
     public static void main(String[] args) {
-        RiverSizesAlgo river = new RiverSizesAlgo();
-        int[][] matrix = new int[][]{
-                {1, 0, 0, 1, 1, 1},
-                //{1, 0, 1, 0},
-                //{0, 0, 1, 0},
-                //{1, 0, 1, 0}
-                };
-        river.riverSizes(matrix);
+
+        KnightProbabilityInChessboard688 knight = new KnightProbabilityInChessboard688();
+        knight.knightProbability(3, 3, 0, 0);
+
+
+//        RiverSizesAlgo river = new RiverSizesAlgo();
+//        int[][] matrix = new int[][]{
+//                {1, 0, 0, 1},
+//                {1, 0, 1, 0},
+//                {0, 0, 1, 0},
+//                {1, 0, 1, 0}
+//                };
+//        river.riverSizes(matrix);
 
 //        AreBloodRelated abr = new AreBloodRelated();
 //        abr.prepareTree();
