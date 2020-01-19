@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 public class MainClass {
 
 
@@ -51,8 +52,26 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        KnightProbabilityInChessboard688 knight = new KnightProbabilityInChessboard688();
-        knight.knightProbability(3, 3, 0, 0);
+        AddTwoNumbersII445 add = new AddTwoNumbersII445();
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(7);
+        l1.add(2);
+        l1.add(4);
+        l1.add(3);
+
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(5);
+        l2.add(6);
+        l2.add(4);
+
+        add.addTwoNumbers(l1, l2);
+
+
+//        MultiplyStrings43 mul = new MultiplyStrings43();
+//        mul.multiply("123", "456");
+
+//        KnightProbabilityInChessboard688 knight = new KnightProbabilityInChessboard688();
+//        knight.knightProbability(3, 3, 0, 0);
 
 
 //        RiverSizesAlgo river = new RiverSizesAlgo();
